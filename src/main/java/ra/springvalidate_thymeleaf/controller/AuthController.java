@@ -21,7 +21,11 @@ public class AuthController {
     private AccountService accountService;
     @Autowired
     private RegisterValidate registerValidate;
-    @RequestMapping({"/sign-up",""})
+    @RequestMapping
+    public String demo(){
+        return "demo";
+    }
+    @RequestMapping({"/sign-up",})
     public String  formRegister(Model model){
         model.addAttribute("register",new FormRegister());
         return "form-register";

@@ -5,6 +5,22 @@
     <title>Title</title>
 </head>
 <body>
+<select id="lang">
+    <option value="vi">Vietnamese</option>
+    <option value="en">English</option>
+    <option value="ja">Japanese</option>
+    <option value="ko">Korean</option>
+    <option value="zh">Chinese</option>
+</select>
+<h1 th:text="#{app.body.title}"></h1>
+<p th:text="#{app.body.content}"></p>
 
+<script>
+   let select = document.getElementById("lang");
+   select.addEventListener('change',function (){
+      console.log(select.value);
+       location.href = "?lang="+select.value;
+   })
+</script>
 </body>
 </html>
